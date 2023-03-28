@@ -1,15 +1,15 @@
 const express = require('express');
 const axios = require('axios');
 const cheerio = require('cheerio');
-
 const app = express();
+const path = require("path");
+
+// Serve static files from the public directory
+app.use(express.static(path.join(__dirname, "public")));
+
 
 /**intergrate LESS in project */
 
-
-app.get('/', (req, res) => {
-  res.sendFile('index.html', { root: __dirname });
-});
 
 
 /**
